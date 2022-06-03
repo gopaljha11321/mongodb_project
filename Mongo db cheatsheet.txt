@@ -1,0 +1,124 @@
+>database command
+//View all databases
+show dbs
+
+//create a new or switch databases
+use comments
+
+//check present databases or current databases
+db
+
+//delete databases
+db.dropDatabase()
+
+>collection base command
+//show collection in database
+show collections
+
+//create a collection name in database
+db.createCollection('name');
+
+//delete collection in database
+db.content.drop()//content is the name of the collection
+
+> command for row 
+//insert a row in collection
+db.comments.insert({
+    'name':'gopal',
+    'age': 19,
+    'gender':'Male' 
+    })
+
+//insert object or many row in collection use  '[]' array
+db.comments.insertMany(
+    [
+        {
+    'name':'gopal',
+    'age': 19,
+    'gender':'Male' 
+    },
+    {
+    'name':'ravi',
+    'age': 20,
+    'gender':'Male' 
+    },
+    {
+    'name':'shaym',
+    'age': 21,
+    'gender':'Male' 
+    }
+    ]
+)
+
+//insert data in collection with time
+db.comments.insert({
+    'name':'gopal',
+    'age': 19,
+    'gender':'Male' ,
+    'date':new Date()
+    })
+
+//show all row
+db.comments.find()
+
+//show all data in pretty format
+db.comments.find().pretty()
+
+//show limited data in pretty format
+db.comments.find().pretty().limit(2)
+
+//search in mongodb database
+db.comments.find({'age':19,'name':gopal})
+
+//count data from collection
+db.comments.find('name':'gopal').count()
+
+//sort data from collection
+db.comments.find().sort({"age":1}).pretty()//-1 are use for revserse sorting
+
+//update a row if element find
+db.comments.update({"name":"gopal"},{
+    "name":"rama",
+    "age":21,
+    "gender":"male",
+    "massage":"hii everyone here"
+})
+//update a row if element is not there add in row 
+db.comments.update({"name":"karma"},{
+    "name":"rama",
+    "age":21,
+    "gender":"male",
+    "massage":"hii everyone here"
+},{upsert:true})
+
+//mongodb increment operator
+db.comments.update({"name":"rama"},
+{
+    $inc:{
+        "age":3
+    }
+}
+
+//mongodb. rename operator
+db.comments.update(
+    {
+        $rename:{
+            "age":"umar"
+        }
+    }
+) 
+
+//delete row in collection
+db.comments.remove({name:"gopal"})
+
+//less than from specific range
+db.comments.find({age:{$lt:22}})
+
+//greater than from specific range
+db.comments.find({age:{$gt:22}})
+
+//greater than and equals to 
+db.comments.find({age:{$gte:21}})
+
+//less than and equals to 
+db.comments.find({age:{$lte:21}})

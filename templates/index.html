@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mongo db</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="thanks/" onsubmit >{% csrf_token%}
+            <table border="1px" width="400px" height="300px">
+                <tr>
+                <th>
+                    Contect Number
+                </th>
+            </tr>
+            <tr>
+                <td>User ID &nbsp;&nbsp;&nbsp; </td>
+                <td><input name="id" required ></input></td>
+            </tr>
+                <tr>
+                    <td>Name &nbsp;&nbsp;&nbsp; </td>
+                    <td><input name="name" required ></input></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="text" required name="age" id="age"></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td><input type="text" required name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Number</td>
+                    <td><input type="text" required name="number" id="number"></td>
+                </tr>
+                <tr>
+                    <td><input  type="submit" required name="submit" id="submit" ></td>
+                </tr>
+
+
+            </table>
+     
+
+        </form>
+    </div>
+    <br>
+    <div class="container">
+        <form method="post" action="delete/" onsubmit >{% csrf_token%}
+            <table border="1px"width="400px" height="100px" >
+                <tr>
+                    <th>
+                        Delete data 
+                    </th>
+
+                </tr>
+                <tr>
+                    <td>
+                        UserID 
+                    </td>
+                    <td>
+                        <input type="test" required name="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input type="submit" value="Submit"></td>
+                </tr>
+                   
+
+            </table>
+
+
+        </form>
+        <div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
